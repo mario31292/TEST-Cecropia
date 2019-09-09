@@ -99,8 +99,7 @@ function findLocation(id) {
         if (!id) document.querySelector('#addfav').style.display = "inline-block";
         document.querySelector('.data-location').style.display = "inline-block";
         document.querySelector("#name").innerHTML = location.title + ' / ' + location.parent.title;
-        document.querySelector("#temp").innerHTML = parseInt(location.consolidated_weather[0].the_temp) + '°C';
-        document.querySelector("#temp-rank").innerHTML = parseInt(location.consolidated_weather[0].min_temp) + '°C / ' + parseInt(location.consolidated_weather[0].max_temp) +'°C';
+        changeMeasure();
         document.querySelector("#precipitation").innerHTML = 'Precipitation: '+location.consolidated_weather[0].predictability+'%';
         document.querySelector("#humidity").innerHTML = 'Humedity: ' +location.consolidated_weather[0].humidity+'%';
         document.querySelector("#wind").innerHTML = 'Wind: ' + Math.round(location.consolidated_weather[0].wind_speed) + 'mph';
