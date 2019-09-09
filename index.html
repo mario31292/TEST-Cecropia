@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Test Cecropia</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='scss/style.css'>
+    <script src='js/main.js'></script>
+</head>
+<body onload="initialize()">
+    <header>
+        <span>World Weather</span>
+    </header>
+    <div id="content">
+        <div id="loading"><img src="img/loading.gif" width="50px" height="50px" /></div>
+        <div class="form-container">
+            <div class="options-container">
+                <div class="selects">
+                    <span>Continent: <select id="continents" onchange="loadCountries()"></select></span>
+                    <span>Country: <select id="countries" onchange="loadLocations()"></select></span>
+                    <span>Location: <select id="locations" onchange="findLocation()"></select></span>
+                </div>
+                <div class="buttons">
+                    <button type="button" id="addfav" onclick="addFavorite()">Add Favorite</button>
+                    <button type="button" id="clear" onclick="initialize()">Clear</button><br />
+                </div>
+            </div>
+            <div class="favorites-container">
+                <span>Favorites</span><br />
+                <div id="favorites-list"></div>
+            </div>
+        </div>
+        <div class="data-container">
+            <img id="weather" src="img/weather.png" width="30px" height="30px" />
+            <div class="data-location">
+                <div class="measure-container">
+                    <span>°C</span>
+                    <label class="switch">
+                        <input id="measure" type="checkbox" onchange="changeMeasure()">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>°F</span><br />
+                </div>
+                <img width="60px" height="60px" alt="" id="state" src="" /><br />
+                <span id="name"></span><br/>
+                <hr/>
+                <span id="temp"></span><br />
+                <span id="temp-rank"></span><br />
+                <hr/>
+                <span id="precipitation"></span><br />
+                <span id="humidity"></span><br />
+                <span id="wind"></span>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front End Technical Test - Cecropia</p>
+        <p>Designed by Mario David Hidalgo Alpízar</p>
+    </footer>
+</body>
+</html>
